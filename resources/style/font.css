@@ -1,0 +1,54 @@
+/* Regular Weight (400) */
+@font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/webfonts/poppins-latin-400-normal.woff2') format('woff2'),
+         url('../fonts/webfonts/poppins-latin-400-normal.woff') format('woff');
+    font-weight: normal; /* 400 */
+    font-style: normal;
+  }
+  
+  /* Bold Weight (700) */
+  @font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/webfonts/poppins-latin-700-normal.woff2') format('woff2'),
+         url('../fonts/webfonts/poppins-latin-700-normal.woff') format('woff');
+    font-weight: bold; /* 700 */
+    font-style: normal;
+  }
+  
+  /* Light Weight (300) */
+  @font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/webfonts/poppins-latin-300-normal.woff2') format('woff2'),
+         url('../fonts/webfonts/poppins-latin-300-normal.woff') format('woff');
+    font-weight: 300; /* Light */
+    font-style: normal;
+  }
+  
+  /* Semi-Bold Weight (600) */
+  @font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/webfonts/poppins-latin-600-normal.woff2') format('woff2'),
+         url('../fonts/webfonts/poppins-latin-600-normal.woff') format('woff');
+    font-weight: 600; /* Semi-Bold */
+    font-style: normal;
+  }
+  
+  /* Extra-Bold Weight (800) */
+  @font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/webfonts/poppins-latin-800-normal.woff2') format('woff2'),
+         url('../fonts/webfonts/poppins-latin-800-normal.woff') format('woff');
+    font-weight: 800; /* Extra-Bold */
+    font-style: normal;
+  }
+  
+  /* Black Weight (900) */
+  @font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/webfonts/poppins-latin-900-normal.woff2') format('woff2'),
+         url('../fonts/webfonts/poppins-latin-900-normal.woff') format('woff');
+    font-weight: 900; /* Black */
+    font-style: normal;
+  }
+  
