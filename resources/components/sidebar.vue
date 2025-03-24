@@ -20,12 +20,12 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="$_PORTAL.DOMAIN+ '/app_pages/landing-page/'">
+        <a class="nav-link" href="http://localhost/admin/appPages/dashboard/">
           <span class="menu-title">Dashboard</span>
           <i class="mdi mdi-home menu-icon"></i>
         </a>
       </li>
-      <!-- <li class="nav-item">
+      <li class="nav-item">
         <a
           class="nav-link"
           data-bs-toggle="collapse"
@@ -39,20 +39,20 @@
         <div class="collapse show" id="ui-basic" style="">
           <ul class="nav flex-column sub-menu">
             <li class="nav-item">
-              <a class="nav-link" href="#"
-                >Buyer</a
+              <a class="nav-link" href="http://localhost/admin/appPages/product"
+                >Create Product</a
               >
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#"
-                >Seller</a
+                >View Product</a
               >
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a class="nav-link" href="#"
                 >Marketplace</a
               >
-            </li>
+            </li> -->
           </ul>
         </div>
       </li>
@@ -86,9 +86,10 @@
             </li>
           </ul>
         </div>
-      </li> -->
+      </li>
     </ul>
   </nav>
+
 </template>
 
 <script>

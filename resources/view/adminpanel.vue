@@ -22,7 +22,7 @@
                     <img src="http://localhost/admin/assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image">
                     <h4 class="font-weight-normal mb-3">Weekly Orders <i class="mdi mdi-bookmark-outline mdi-24px float-end"></i>
                     </h4>
-                    <h2 class="mb-5">45,6334</h2>
+                    <h2 class="mb-5">{{ weeklyOrdersCount }}</h2>
                     <h6 class="card-text ">Decreased by 10%</h6>
                   </div>
                 </div>
@@ -99,7 +99,7 @@
                   </div>
                 </div>
               </div> -->
-              <div class="col-md-12 grid-margin stretch-card text-center">
+              <div class="col-md-5 grid-margin stretch-card text-center">
                 <div class="card">
                   <div class="card-body">
                     <h4 class="card-title">Top 3 Visited Products</h4>
@@ -118,6 +118,14 @@
                   </div>
                 </div>
               </div>
+
+              <div class="col-md-5 grid-margin stretch-card text-center">
+                <div class="card">
+                  <div class="card-body">
+                    <DatePicker v-model.range="range"></DatePicker>
+                  </div>
+                </div>
+              </div>
             </div>
           
     
@@ -125,7 +133,8 @@
 </template>
 <script>
     import layout from '../components/layout.vue';
-    import { ref, onMounted } from 'vue';
+    import { ref, onMounted, computed } from 'vue';
+  
     export default {
     components:{
         layout,
@@ -166,7 +175,22 @@
         }
       });
 
-  
+      const range = ref({
+        start:  new Date(new Date().setDate(new Date().getDate() - 6)).setHours(0, 0, 0, 0),
+        end: new Date(new Date().setHours(23, 59, 59, 999)),
+       });
+
+       const weeklyOrdersCount = computed(() => {
+        let orderPlacedData = JSON.parse(localStorage.getItem('orderPlacedData')) || [];
+      
+        const ordersInLastWeek = orderPlacedData.filter(order => {
+          const orderDate = new Date(order.date);
+          return orderDate >= new Date(range.value.start) && orderDate <= new Date(range.value.end);
+        });
+
+        return ordersInLastWeek.length; 
+      });
+
 
       const renderTrafficChart = () => {
         // Get the canvas element context
@@ -216,6 +240,8 @@
       visitedProduct,
       totalVisitCount,
       topVisitedProducts,
+      range,
+      weeklyOrdersCount
     };
   }
 };

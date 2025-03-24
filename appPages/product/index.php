@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-        <!-- plugins:css -->
-   
+    <title>Create Product form</title>
+
+
     <link rel="stylesheet" href="../../assets/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="../../resources/esmodules/v-calendar/es/style.css"/>
     <link rel="stylesheet" href="../../assets/vendors/ti-icons/css/themify-icons.css">
@@ -16,15 +16,16 @@
     <link rel="shortcut icon" href="../../assets/images/favicon.png" />
 
     
-        <!-- <link rel="stylesheet" href="../../resources/style/font.css"> -->
-
 </head>
 <body>
     <div id="app" >
-        <admin-panel></admin-panel>
+        <!-- <admin-panel></admin-panel> -->
+        
+         <create-product></create-product>
     </div>
 
-<script src="../../assets/vendors/js/vendor.bundle.base.js"></script>
+
+    <script src="../../assets/vendors/js/vendor.bundle.base.js"></script>
 
     <!-- endinject -->
     <!-- Plugin js for this page -->
@@ -48,20 +49,15 @@
     {
         "imports": {
             "vue": "../../resources/js/vue.3.4.31.esm-browser.js",
-            "axios" : "../../resources/esmodules/axios/axios.min.js",
-            "@popperjs/core": "../../resources/esmodules/@popperjs/core/dist/esm/popperjs-core.esm.js",
-            "v-calendar" : "../../resources/esmodules/v-calendar/es/index.js"
-
-
+            "axios" : "../../resources/esmodules/axios/axios.min.js"
             
         }
     }
   </script>
   <script type="module">
-      import { createApp, defineAsyncComponent } from '../../resources/js/vue.3.4.31.esm-browser.js'
+      import { createApp, defineAsyncComponent } from '../../resources/js/vue.3.4.31.esm-browser.js';
       import * as Vue from '../../resources/js/vue.3.4.31.esm-browser.js';
       import { loadModule, version } from '../../resources/js/vue3-sfc-loader.0.9.5.esm.js'
-      import { Calendar, DatePicker } from 'v-calendar'
 
       const options = {
           moduleCache: {
@@ -90,16 +86,17 @@
 
       const App =createApp( {
         components: {
-            "admin-panel":defineAsyncComponent(()=>loadModule('../../resources/view/adminpanel.vue',options))
+            "create-product":defineAsyncComponent(()=>loadModule('../../resources/view/createProduct.vue',options)),
+            
             
             // "HeaderPage": defineAsyncComponent(() => loadModule('./components/header/HeaderPage.vue', options)),
             // "Dashboard": defineAsyncComponent(() => loadModule('./components/pages/Dashboard.vue', options)),
         },
       }
       );
-      App.component('Calendar', Calendar);
+    //   App.component('Calendar', Calendar);
 
-      App.component('DatePicker', DatePicker)
+    //   App.component('DatePicker', DatePicker)
 
 
       App.mount('#app');
